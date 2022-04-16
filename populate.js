@@ -42,8 +42,7 @@ module.exports.updateHTML = (username, opts) => {
         try {
           console.log("Building HTML/CSS...");
           const repos = await getRepos(username, opts);
-
-          for (var i = 0; i < repos.length; i++) {
+          for (var i = 0; i < 4; i++) {
             let element;
             if (repos[i].fork == false) {
               element = document.getElementById("work_section");
@@ -111,11 +110,6 @@ module.exports.updateHTML = (username, opts) => {
                 <span style="display:${
                   user.email == null || !user.email ? "none" : "block"
                 };"><i class="fas fa-envelope"></i> &nbsp; ${user.email}</span>
-                <span style="display:${
-                  user.blog == null || !user.blog ? "none" : "block"
-                };"><i class="fas fa-link"></i> &nbsp; <a href="${user.blog}">${
-            user.blog
-          }</a></span>
                 <span style="display:${
                   user.location == null || !user.location ? "none" : "block"
                 };"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; ${

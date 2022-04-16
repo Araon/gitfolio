@@ -14,8 +14,9 @@ async function getRepos(username, opts = {}) {
   let page = 1;
   let repos = [];
 
-  const sort = opts.sort;
-  const order = opts.order || (sort === "full_name" ? "asc" : "desc");
+  const sort = "pushed";
+  /*const order = opts.order || (sort === "full_name" ? "asc" : "desc");*/
+  const order = "desc";
   const types = opts.types || [];
   let type = "all";
 
